@@ -2,7 +2,7 @@
 
 Practice code for Mojo.
 
-Mojo's String encoding is utf-8, which has varying code length for char. Slicing operation like Python is on byte order, which is not "legal" char index.
+Mojo's String encoding is utf-8, which has varying code length for char. Slicing operation of String is on byte order, which is not "legal" char index.
 Slicing of String will need to decode String from beginning. This makes random access through indexing not convinient as Python.
 
 In ustring.mojo, UString is a struct wrapping String with additional fields: length (length of chars in String), inner_string (utf-8 encoded String), and idx (List[UInt8], which records corresponding byte index (end position) of each char in segments, each segment's lenght is 64 to ensure byte index < 255).
