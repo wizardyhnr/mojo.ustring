@@ -28,3 +28,9 @@ Initially, I was thinking about only recoding length of each char to save storge
 Todo:
 
 implement inplace dunder method like __iadd__() in String since modified inner_string needs idx and length update.
+
+Warning:
+
+Mojo's API is not stable currently. This code is verified in 24.4 version but may need tweaks in order to run in future version.
+
+For example, to interact with SIMD, DTypePointer is used heavily internally. According to roadmap, UnsafePointer is preferred in the future and DTypePointer may be obsolete. load and store functions could be moved to SIMD struct instead. 
